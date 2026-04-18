@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusLink — Feed</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav class="nav">
+  <a class="nav-logo" href="#">Campus<span>link</span></a>
+
+  <div class="nav-search">
+    <i class="fa fa-search"></i>
+    <input type="text" placeholder="Buscar alunos, posts, eventos...">
+  </div>
+
+  <div class="nav-icons">
+    <button class="nav-icon-btn" title="Início"><i class="fa fa-home"></i></button>
+    <button class="nav-icon-btn" title="Notificações">
+      <i class="fa fa-bell"></i>
+      <span class="badge"></span>
+    </button>
+    <button class="nav-icon-btn" title="Mensagens">
+      <i class="fa fa-envelope"></i>
+      <span class="badge"></span>
+    </button>
+    <img class="nav-avatar" src="https://i.pravatar.cc/80?img=11" alt="Meu perfil">
+  </div>
+</nav>
+
+<!-- ══ LAYOUT ══ -->
+<div class="layout">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar-left">
+    <span class="sidebar-section-label">Menu</span>
+
+    <a class="nav-link active" href="#"><i class="fa fa-home"></i> Feed</a>
+    <a class="nav-link" href="#"><i class="fa fa-compass"></i> Explorar</a>
+    <a class="nav-link" href="#">
+      <i class="fa fa-bell"></i> Notificações
+      <span class="count">3</span>
+    </a>
+    <a class="nav-link" href="#">
+      <i class="fa fa-envelope"></i> Mensagens
+      <span class="count">7</span>
+    </a>
+    <a class="nav-link" href="#"><i class="fa fa-bookmark"></i> Salvos</a>
+    <a class="nav-link" href="#"><i class="fa fa-user"></i> Perfil</a>
+
+    <div class="sidebar-divider"></div>
+    <span class="sidebar-section-label">Campus</span>
+
+    <a class="nav-link" href="#"><i class="fa fa-calendar-alt"></i> Eventos</a>
+    <a class="nav-link" href="#"><i class="fa fa-graduation-cap"></i> Grupos de Estudo</a>
+    <a class="nav-link" href="#"><i class="fa fa-briefcase"></i> Vagas &amp; Estágios</a>
+    <a class="nav-link" href="#"><i class="fa fa-flask"></i> Pesquisas</a>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="user-mini">
+      <img src="https://i.pravatar.cc/80?img=11" alt="avatar">
+      <div class="user-mini-info">
+        <div class="user-mini-name">Ana Beatriz</div>
+        <div class="user-mini-handle">@anabeatriz</div>
+      </div>
+      <button class="user-mini-btn" title="Mais opções"><i class="fa fa-ellipsis-h"></i></button>
+    </div>
+  </aside>
+
+  <!-- MAIN FEED -->
+  <main class="feed">
+
+    <!-- Stories -->
+    <div class="stories-wrap">
+      <div class="stories-row">
+        <div class="story-item">
+          <div class="story-ring story-add">
+            <img src="https://i.pravatar.cc/80?img=11" alt="Você">
+          </div>
+          <span class="story-name">Seu story</span>
+        </div>
+        <div class="story-item">
+          <div class="story-ring">
+            <img src="https://i.pravatar.cc/80?img=32" alt="Carlos">
+          </div>
+          <span class="story-name">Carlos</span>
+        </div>
+        <div class="story-item">
+          <div class="story-ring">
+            <img src="https://i.pravatar.cc/80?img=47" alt="Mariana">
+          </div>
+          <span class="story-name">Mariana</span>
+        </div>
+        <div class="story-item">
+          <div class="story-ring">
+            <img src="https://i.pravatar.cc/80?img=5" alt="Prof. Lima">
+          </div>
+          <span class="story-name">Prof. Lima</span>
+        </div>
+        <div class="story-item">
+          <div class="story-ring seen">
+            <img src="https://i.pravatar.cc/80?img=25" alt="Thiago">
+          </div>
+          <span class="story-name">Thiago</span>
+        </div>
+        <div class="story-item">
+          <div class="story-ring seen">
+            <img src="https://i.pravatar.cc/80?img=60" alt="Letícia">
+          </div>
+          <span class="story-name">Letícia</span>
+        </div>
+        <div class="story-item">
+          <div class="story-ring">
+            <img src="https://i.pravatar.cc/80?img=15" alt="Rafael">
+          </div>
+          <span class="story-name">Rafael</span>
+        </div>
+        <div class="story-item">
+          <div class="story-ring seen">
+            <img src="https://i.pravatar.cc/80?img=45" alt="Fernanda">
+          </div>
+          <span class="story-name">Fernanda</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- New post bar -->
+    <div class="new-post-bar">
+      <img src="https://i.pravatar.cc/80?img=11" alt="avatar">
+      <input class="new-post-input" type="text" placeholder="No que você está pensando, Ana?">
+      <div class="post-actions-mini">
+        <button class="post-action-mini" title="Foto"><i class="fa fa-image"></i></button>
+        <button class="post-action-mini" title="Evento"><i class="fa fa-calendar"></i></button>
+        <button class="post-action-mini" title="Enquete"><i class="fa fa-chart-bar"></i></button>
+      </div>
+    </div>
+
+    <!-- Post 1 - texto + imagem -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="post-avatar-wrap">
+          <img class="post-avatar" src="https://i.pravatar.cc/80?img=32" alt="Carlos Eduardo">
+          <span class="post-online"></span>
+        </div>
+        <div class="post-meta">
+          <div class="post-author">Carlos Eduardo</div>
+          <div class="post-course">Eng. da Computação · IFCE Fortaleza</div>
+        </div>
+        <span class="post-time">2 min atrás</span>
+        <button class="post-menu-btn"><i class="fa fa-ellipsis-h"></i></button>
+      </div>
+
+      <div class="post-text">
+        Acabei de apresentar meu TCC sobre redes neurais convolucionais para reconhecimento de pragas em culturas do Nordeste 🌱🤖 Foram 2 anos de pesquisa e finalmente aprovado com nota máxima! Obrigado a todos que me apoiaram 💚
+        <br><br>
+        <span class="tag">#TCC</span> <span class="tag">#IA</span> <span class="tag">#IFCE</span> <span class="tag">#EngenhariaComputacao</span>
+      </div>
+
+      <div class="post-img-grid">
+        <div class="placeholder-img" style="height:260px;">🎓</div>
+        <div class="placeholder-img" style="height:260px;">💻</div>
+      </div>
+
+      <div class="likes-preview" style="padding-top:12px;">
+        <strong>Ana Beatriz, Prof. Lima</strong> e mais <strong>84 pessoas</strong> curtiram
+      </div>
+
+      <div class="post-footer">
+        <button class="post-action liked" onclick="toggleLike(this)">
+          <i class="fa fa-heart"></i> 86
+        </button>
+        <button class="post-action" onclick="this.style.color='var(--green)'">
+          <i class="fa fa-comment"></i> 24
+        </button>
+        <button class="post-action">
+          <i class="fa fa-retweet"></i> 12
+        </button>
+        <button class="post-action share">
+          <i class="fa fa-share"></i> Compartilhar
+        </button>
+      </div>
+    </div>
+
+    <!-- Post 2 - evento -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="post-avatar-wrap">
+          <img class="post-avatar" src="https://i.pravatar.cc/80?img=5" alt="IFCE Oficial">
+        </div>
+        <div class="post-meta">
+          <div class="post-author">IFCE Oficial 🏫</div>
+          <div class="post-course">Instituto Federal do Ceará</div>
+        </div>
+        <span class="post-time">1 h atrás</span>
+        <button class="post-menu-btn"><i class="fa fa-ellipsis-h"></i></button>
+      </div>
+
+      <div class="post-text">
+        🚀 Não perca a maior semana de tecnologia do IFCE! Inscrições abertas para a <strong>TechWeek 2026</strong>
+      </div>
+
+      <div class="post-event-banner">
+        <div class="event-label">📅 Evento Oficial</div>
+        <div class="event-title">TechWeek IFCE 2026</div>
+        <div class="event-meta">
+          <span><i class="fa fa-calendar"></i> 22–26 Abr</span>
+          <span><i class="fa fa-map-marker-alt"></i> Campus Fortaleza</span>
+          <span><i class="fa fa-users"></i> 1.200 vagas</span>
+        </div>
+        <button class="event-btn"><i class="fa fa-ticket-alt"></i> Garantir minha vaga</button>
+      </div>
+
+      <div class="post-tag-row">
+        <span class="tag-pill">Tecnologia</span>
+        <span class="tag-pill">Inovação</span>
+        <span class="tag-pill">Workshops</span>
+        <span class="tag-pill">Hackathon</span>
+      </div>
+
+      <div class="post-footer">
+        <button class="post-action" onclick="toggleLike(this)">
+          <i class="fa fa-heart"></i> 312
+        </button>
+        <button class="post-action">
+          <i class="fa fa-comment"></i> 58
+        </button>
+        <button class="post-action">
+          <i class="fa fa-retweet"></i> 201
+        </button>
+        <button class="post-action share">
+          <i class="fa fa-share"></i> Compartilhar
+        </button>
+      </div>
+    </div>
+
+    <!-- Post 3 - texto simples + imagem única -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="post-avatar-wrap">
+          <img class="post-avatar" src="https://i.pravatar.cc/80?img=47" alt="Mariana Costa">
+        </div>
+        <div class="post-meta">
+          <div class="post-author">Mariana Costa</div>
+          <div class="post-course">Design Gráfico · IFCE Maracanaú</div>
+        </div>
+        <span class="post-time">3 h atrás</span>
+        <button class="post-menu-btn"><i class="fa fa-ellipsis-h"></i></button>
+      </div>
+
+      <div class="post-text">
+        Finalizei o projeto de identidade visual para o Centro Acadêmico! Meses de trabalho, muita pesquisa e muito café ☕ O que acharam? Feedbacks são bem-vindos 👇
+        <br><span class="tag">#Design</span> <span class="tag">#BrandingIFCE</span>
+      </div>
+
+      <div class="placeholder-img" style="height:340px;">🎨</div>
+
+      <div class="likes-preview" style="padding-top:12px;">
+        <strong>João Pedro</strong> e mais <strong>47 pessoas</strong> curtiram
+      </div>
+
+      <div class="post-footer">
+        <button class="post-action" onclick="toggleLike(this)">
+          <i class="fa fa-heart"></i> 48
+        </button>
+        <button class="post-action">
+          <i class="fa fa-comment"></i> 15
+        </button>
+        <button class="post-action">
+          <i class="fa fa-retweet"></i> 5
+        </button>
+        <button class="post-action share">
+          <i class="fa fa-share"></i> Compartilhar
+        </button>
+      </div>
+    </div>
+
+    <!-- Post 4 - grupo de estudo -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="post-avatar-wrap">
+          <img class="post-avatar" src="https://i.pravatar.cc/80?img=15" alt="Rafael Melo">
+        </div>
+        <div class="post-meta">
+          <div class="post-author">Rafael Melo</div>
+          <div class="post-course">Ciência da Computação · IFCE Caucaia</div>
+        </div>
+        <span class="post-time">5 h atrás</span>
+        <button class="post-menu-btn"><i class="fa fa-ellipsis-h"></i></button>
+      </div>
+
+      <div class="post-text">
+        Grupo de estudo de <strong>Estruturas de Dados</strong> começa amanhã às 19h na sala 204! Ainda tem vagas 📚 Manda mensagem pra entrar no grupo 💬
+        <br><br>
+        Tópicos desta semana: Árvores AVL, Heaps e Grafos.
+        <br><span class="tag">#GrupoDeEstudo</span> <span class="tag">#EstruturaDeDados</span>
+      </div>
+
+      <div class="post-tag-row">
+        <span class="tag-pill">🕗 Amanhã 19h</span>
+        <span class="tag-pill">📍 Sala 204</span>
+        <span class="tag-pill">4 vagas restantes</span>
+      </div>
+
+      <div class="post-footer">
+        <button class="post-action" onclick="toggleLike(this)">
+          <i class="fa fa-heart"></i> 29
+        </button>
+        <button class="post-action">
+          <i class="fa fa-comment"></i> 11
+        </button>
+        <button class="post-action">
+          <i class="fa fa-retweet"></i> 8
+        </button>
+        <button class="post-action share">
+          <i class="fa fa-share"></i> Compartilhar
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside class="sidebar-right">
+
+    <div class="ifce-badge">
+      <div class="ifce-badge-icon">🏛️</div>
+      <div class="ifce-badge-text">
+        <div class="ifce-badge-title">IFCE · Campus Fortaleza</div>
+        <div class="ifce-badge-sub">2.140 alunos conectados agora</div>
+      </div>
+    </div>
+
+    <!-- Sugestões -->
+    <div class="widget">
+      <div class="widget-header">
+        Sugestões para você <a href="#">Ver todos</a>
+      </div>
+      <div class="suggest-item">
+        <img class="suggest-avatar" src="https://i.pravatar.cc/80?img=60" alt="Letícia">
+        <div class="suggest-info">
+          <div class="suggest-name">Letícia Alves</div>
+          <div class="suggest-sub">Sistemas de Info.</div>
+        </div>
+        <button class="suggest-follow" onclick="toggleFollow(this)">Seguir</button>
+      </div>
+      <div class="suggest-item">
+        <img class="suggest-avatar" src="https://i.pravatar.cc/80?img=22" alt="Bruno">
+        <div class="suggest-info">
+          <div class="suggest-name">Bruno Farias</div>
+          <div class="suggest-sub">Mecatrônica</div>
+        </div>
+        <button class="suggest-follow" onclick="toggleFollow(this)">Seguir</button>
+      </div>
+      <div class="suggest-item">
+        <img class="suggest-avatar" src="https://i.pravatar.cc/80?img=44" alt="Camila">
+        <div class="suggest-info">
+          <div class="suggest-name">Camila Rocha</div>
+          <div class="suggest-sub">Administração</div>
+        </div>
+        <button class="suggest-follow" onclick="toggleFollow(this)">Seguir</button>
+      </div>
+      <div class="suggest-item">
+        <img class="suggest-avatar" src="https://i.pravatar.cc/80?img=33" alt="Davi">
+        <div class="suggest-info">
+          <div class="suggest-name">Davi Souza</div>
+          <div class="suggest-sub">Redes de Comp.</div>
+        </div>
+        <button class="suggest-follow" onclick="toggleFollow(this)">Seguir</button>
+      </div>
+    </div>
+
+    <!-- Trending -->
+    <div class="widget">
+      <div class="widget-header">Em alta no IFCE</div>
+      <div class="trend-item">
+        <span class="trend-num">1</span>
+        <div class="trend-info">
+          <div class="trend-tag">#TechWeek2026</div>
+          <div class="trend-count">1.482 posts</div>
+        </div>
+        <i class="fa fa-fire trend-icon" style="color:#f44336;"></i>
+      </div>
+      <div class="trend-item">
+        <span class="trend-num">2</span>
+        <div class="trend-info">
+          <div class="trend-tag">#ENEM2026</div>
+          <div class="trend-count">943 posts</div>
+        </div>
+        <i class="fa fa-arrow-up trend-icon"></i>
+      </div>
+      <div class="trend-item">
+        <span class="trend-num">3</span>
+        <div class="trend-info">
+          <div class="trend-tag">#GrupoDeEstudo</div>
+          <div class="trend-count">712 posts</div>
+        </div>
+        <i class="fa fa-arrow-up trend-icon"></i>
+      </div>
+      <div class="trend-item">
+        <span class="trend-num">4</span>
+        <div class="trend-info">
+          <div class="trend-tag">#IFCEFortaleza</div>
+          <div class="trend-count">541 posts</div>
+        </div>
+        <i class="fa fa-minus trend-icon"></i>
+      </div>
+      <div class="trend-item">
+        <span class="trend-num">5</span>
+        <div class="trend-info">
+          <div class="trend-tag">#EstagioTech</div>
+          <div class="trend-count">389 posts</div>
+        </div>
+        <i class="fa fa-arrow-up trend-icon"></i>
+      </div>
+    </div>
+
+    <!-- Notícias do Campus -->
+    <div class="widget">
+      <div class="widget-header">Notícias do Campus <a href="#">Ver mais</a></div>
+      <div class="news-item">
+        <div class="news-img placeholder-img-sm">📢</div>
+        <div class="news-text">
+          <div class="news-title">Inscrições para bolsas de iniciação científica abertas</div>
+          <div class="news-time">Há 1 hora</div>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-img placeholder-img-sm">🏆</div>
+        <div class="news-text">
+          <div class="news-title">Equipe do IFCE vence olimpíada nacional de robótica</div>
+          <div class="news-time">Há 4 horas</div>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-img placeholder-img-sm">📚</div>
+        <div class="news-text">
+          <div class="news-title">Biblioteca amplia acervo digital com 3.000 novos títulos</div>
+          <div class="news-time">Ontem</div>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- JavaScript separado -->
+<script src="script.js"></script>
+
+</body>
+</html>

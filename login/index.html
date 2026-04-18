@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>campuslink</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- rodapé de cima  -->
+<header class="header">
+  <div class="header-wrapper">
+    <div class="header-logo">
+      <img src="logo-Photoroom.png" alt="CampusLink Logo" class="logo-img">
+    </div>
+    <div class="header-brand">
+      <h1 class="brand-name"><span class="brand-highlight">Campus</span>Link</h1>
+      <p class="brand-tagline">Instituto Federal do Ceará</p>
+    </div>
+  </div>
+</header>
+
+
+
+<!-- formulario  -->
+<section class="hero" id="home">
+  <div class="hero-container">
+    <div class="hero-left">
+      <form class="login-form">
+        <h2>Bem-vindo!</h2>
+        <p>Conecte-se ao IFCE</p>
+
+        <div class="form-group">
+          <input type="email" placeholder="Email institucional" required>
+        </div>
+
+        <div class="form-group">
+          <input type="password" placeholder="Senha" required>
+        </div>
+
+        <button type="submit" class="btn btn-login">Entrar</button>
+
+        <div class="form-divider">ou</div>
+
+        <button type="button" class="btn btn-signup" onclick="openModal()">Criar Nova Conta</button>
+
+        <div class="form-footer">
+          <a href="#">Esqueceu a senha?</a>
+        </div>
+      </form>
+    </div>
+
+
+  
+<!-- emojis laterais do formulario  -->
+    <div class="hero-right">
+      <div class="floating-images">
+        <div class="floating-item emoji emoji-1">🎓</div>
+        <div class="floating-item emoji emoji-2">💻</div>
+        <div class="floating-item emoji emoji-3">🚀</div>
+        <div class="floating-item emoji emoji-4">📚</div>
+        <div class="floating-item emoji emoji-5">🌟</div>
+      </div>
+
+      <!-- texto lateral do formulario -->
+      <div class="hero-branding">
+        <h1 class="brand-title">CampusLink: A rede oficial de quem constrói o IFCE.</h1>
+        <p class="brand-subtitle">Conectando conhecimento, inovação e oportunidades no Instituto Federal do Ceará</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- rodapé -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Sobre o campuslink</h4>
+      <p>O campuslink é uma plataforma criada para conectar alunos do Instituto Federal, facilitando a comunicação, a troca de informações e a interação entre estudantes de diferentes cursos e campi. Nosso objetivo é aproximar pessoas, compartilhar conhecimento e fortalecer a comunidade estudantil.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Links Rápidos</h4>
+      <ul>
+        <li><a href="#">Sobre nós</a></li>
+        <li><a href="#">termos de uso</a></li>
+        <li><a href="#">privacidade</a></li>
+        <li><a href="#">Suporte</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Redes Sociais</h4>
+      <div class="social-links">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 campuslink - IFCE. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ══ OVERLAY ══ -->
+  <div class="overlay" id="overlay" onclick="handleOverlayClick(event)">
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+
+      <!-- HEADER -->
+      <div class="modal-header">
+        <div class="modal-brand">
+          <div class="modal-brand-logo">CL</div>
+          <div class="modal-brand-name">Campus<span>Link</span></div>
+        </div>
+        <button class="close-btn" onclick="closeModal()" title="Fechar">
+          <i class="fa fa-times"></i>
+        </button>
+
+        <!-- Barra de progresso (3 passos) -->
+        <div class="steps-bar" id="steps-bar">
+          <div class="step-seg active" id="seg-0"></div>
+          <div class="step-seg"        id="seg-1"></div>
+          <div class="step-seg"        id="seg-2"></div>
+        </div>
+
+        <h2 class="modal-title" id="modal-title">Crie sua conta</h2>
+        <p class="modal-sub">
+          Passo <span id="step-num">1</span> de 3 —
+          <span id="step-desc">Dados pessoais</span>
+        </p>
+      </div>
+
+      <!-- BODY -->
+      <div class="modal-body">
+
+        <!-- ═══ PASSO 1 — Dados pessoais ═══ -->
+        <div class="step-content active" id="step-1">
+
+          <!-- Nome Completo -->
+          <div class="form-group">
+            <label class="form-label" for="nome">Nome Completo</label>
+            <div class="input-wrap">
+              <i class="fa fa-user input-icon"></i>
+              <input
+                class="form-input" id="nome" type="text"
+                placeholder="    Ex: Antonio Icaro de Lima Soares"
+                autocomplete="name"
+                oninput="validateNome()">
+              <span class="status-icon" id="nome-status"></span>
+            </div>
+            <span class="err-msg" id="nome-err"></span>
+          </div>
+
+          <!-- Email Institucional -->
+          <div class="form-group">
+            <label class="form-label" for="email">Email Institucional</label>
+            <div class="input-wrap">
+              <i class="fa fa-envelope input-icon"></i>
+              <input
+                class="form-input" id="email" type="email"
+                placeholder="    seunome@aluno.ifce.edu.br"
+                autocomplete="email"
+                oninput="validateEmail()">
+              <span class="status-icon" id="email-status"></span>
+            </div>
+            <span class="err-msg" id="email-err"></span>
+          </div>
+
+        </div>
+        
+
+        <!-- ═══ PASSO 2 — Senha & Campus ═══ -->
+        <div class="step-content" id="step-2">
+
+          <!-- Senha -->
+          <div class="form-group">
+            <label class="form-label" for="senha">Senha</label>
+            <div class="input-wrap">
+              <i class="fa fa-lock input-icon"></i>
+              <input
+                class="form-input" id="senha" type="password"
+                placeholder="    Mínimo 8 caracteres"
+                autocomplete="new-password"
+                oninput="validateSenha(); validateConfirma()">
+              <button class="toggle-pass" type="button"
+                onclick="togglePass('senha', this)" tabindex="-1">
+                <i class="fa fa-eye"></i>
+              </button>
+            </div>
+            <span class="err-msg" id="senha-err"></span>
+
+            <!-- Barra de força -->
+            <div class="senha-forca" id="forca-wrap">
+              <div class="forca-track">
+                <div class="forca-fill" id="forca-fill"></div>
+              </div>
+              <span class="forca-label" id="forca-label"></span>
+            </div>
+          </div>
+
+          <!-- Confirmar Senha -->
+          <div class="form-group">
+            <label class="form-label" for="confirma">Confirmar Senha</label>
+            <div class="input-wrap">
+              <i class="fa fa-lock input-icon"></i>
+              <input
+                class="form-input" id="confirma" type="password"
+                placeholder="    Repita sua senha"
+                autocomplete="new-password"
+                oninput="validateConfirma()">
+              <button class="toggle-pass" type="button"
+                onclick="togglePass('confirma', this)" tabindex="-1">
+                <i class="fa fa-eye"></i>
+              </button>
+            </div>
+            <span class="err-msg" id="confirma-err"></span>
+          </div>
+
+          <!-- Campus -->
+          <div class="form-group">
+            <label class="form-label" for="campus">Campus</label>
+            <div class="input-wrap">
+              <i class="fa fa-map-marker-alt input-icon"></i>
+              <select class="form-select" id="campus" onchange="validateCampus()">
+                <option value="" disabled selected>Selecione seu campus</option>
+                <option>IFCE — acaraú</option>
+                <option>IFCE — acopiara</option>
+                <option>IFCE — aracati</option>
+                <option>IFCE — baturité</option>
+                <option>IFCE — boa viagem</option>
+                <option>IFCE — Camocim</option>
+                <option>IFCE — canidé</option>
+                <option>IFCE — caucaia</option>
+                <option>IFCE — cedro</option>
+                <option>IFCE — cratéus</option>
+                <option>IFCE — crato</option>
+                <option>IFCE — fortaleza</option>
+                <option>IFCE — Guaramiranga</option>
+                <option>IFCE — horizonte</option>
+                <option>IFCE — iguatu</option>
+                <option>IFCE — itapipoca</option>
+                <option>IFCE — jaguaribe</option>
+                <option>IFCE — jaguaruana</option>
+                <option>IFCE — juazeiro do norte</option>
+                <option>IFCE — limoeiro do norte</option> 
+                <option>IFCE — maracanaú</option>
+                <option>IFCE — maranguape</option>
+                <option>IFCE — morada nova</option>
+                <option>IFCE — paracuru</option>
+                <option>IFCE — pecém</option>
+                <option>IFCE — quixadá</option>
+                <option>IFCE — sobral</option>
+                <option>IFCE — tabuleiro do norte</option>
+                <option>IFCE — tauá</option>
+                <option>IFCE — tianguá</option>
+                <option>IFCE — ubajara</option>
+                <option>IFCE — umirim</option>
+              </select>
+              <i class="fa fa-chevron-down select-arrow"></i>
+            </div>
+            <span class="err-msg" id="campus-err"></span>
+          </div>
+
+        </div>
+        
+
+        <!-- ═══ PASSO 3 — Confirmação ═══ -->
+        <div class="step-content" id="step-3">
+
+          <!-- Foto de perfil (opcional) -->
+          <div class="avatar-section">
+            <div class="avatar-preview" id="avatar-preview"
+              onclick="document.getElementById('avatar-input').click()">
+              <span id="avatar-emoji">🎓</span>
+              <img id="avatar-img" alt="Foto de perfil">
+            </div>
+            <div class="avatar-hint">
+              <i class="fa fa-camera"></i> Clique para adicionar foto (opcional)
+            </div>
+            <input type="file" id="avatar-input" accept="image/*"
+              style="display:none" onchange="previewAvatar(this)">
+          </div>
+
+          <!-- Resumo dos dados -->
+          <div class="resumo-box">
+            <div class="resumo-title">Resumo do cadastro</div>
+            <div id="resumo-nome"   class="resumo-linha"></div>
+            <div id="resumo-email"  class="resumo-linha"></div>
+            <div id="resumo-campus" class="resumo-linha"></div>
+            <div id="resumo-senha"  class="resumo-linha"></div>
+          </div>
+
+          <!-- Aceitar termos -->
+          <div class="form-group">
+            <div class="checkbox-wrap">
+              <div class="custom-check" id="check-termos"
+                onclick="toggleCheck(this)"></div>
+              <span class="check-label"
+                onclick="toggleCheck(document.getElementById('check-termos'))">
+                Concordo com os
+                <a href="#" onclick="return false">Termos de Uso</a>
+                e a
+                <a href="#" onclick="return false">Política de Privacidade</a>
+                do CampusLink
+              </span>
+            </div>
+            <span class="err-msg" id="termos-err"></span>
+          </div>
+
+        </div>
+       
+
+        <!-- ═══ TELA DE SUCESSO ═══ -->
+        <div class="success-view" id="success-view">
+          <div class="success-icon"><i class="fa fa-check"></i></div>
+          <h3 class="success-title">Conta criada! 🎉</h3>
+          <p class="success-msg">
+            Bem-vindo(a) ao CampusLink! Seu cadastro foi realizado com sucesso.
+            Verifique seu e-mail para ativar a conta.
+          </p>
+          <div class="success-user" id="success-user">
+            <img id="success-avatar" src="https://i.pravatar.cc/80?img=11" alt="avatar">
+            <span class="success-user-name" id="success-name">—</span>
+          </div>
+          <button class="btn-next" style="width:100%;justify-content:center"
+            onclick="closeModal()">
+            <span class="btn-label">
+              <i class="fa fa-arrow-right"></i> Ir para o Feed
+            </span>
+          </button>
+        </div>
+
+      </div>
+     
+
+      <!--  botões de navegação -->
+      <div class="modal-footer" id="modal-footer">
+        <div class="btn-row">
+          <button class="btn-back" id="btn-back" style="display:none" onclick="prevStep()">
+            <i class="fa fa-arrow-left"></i> Voltar
+          </button>
+          <button class="btn-next" id="btn-next" onclick="nextStep()">
+            <span class="btn-label" id="btn-label">
+              Continuar <i class="fa fa-arrow-right"></i>
+            </span>
+          </button>
+        </div>
+        <div class="divider">ou</div>
+        <p class="login-link">
+          Já tem conta?
+          <a href="#" onclick="return false">Faça login</a>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="script.js"></script>
+</body>
+</html>
