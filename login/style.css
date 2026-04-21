@@ -867,7 +867,7 @@ body {
 .input-wrap { position: relative; }
 
 .input-icon {
-  position: absolute; left: 14px; top: 55%;
+  position: absolute; left: 5px; top: 55%;
   transform: translateY(-50%);
   color: var(--icon-muted); font-size: 14px;
   pointer-events: none;
